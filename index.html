@@ -4,142 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Flex and Flex Wrap | Cards</title>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
+        body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            background-color: #121212;
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: linear-gradient(90deg,
+                    #eb3434, #eb5e34, #eb8334, #eba434, #ebcc34,
+                    #ebeb34, #c3eb34, #89eb34, #58eb34, #34eb52,
+                    #34ebcc, #34d5eb, #34a8eb, #346beb, #3734eb,
+                    #7734eb, #a834eb, #eb34c3, #eb3489, #eb3461);
+            background-size: 1000% 100%;
+            background-position: 0% 50%;
+
+            filter: blur(150px);
+            opacity: 0.3;
+
+            animation: gradient 12s infinite linear;
+
+            pointer-events: none;
         }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 50% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+
+
+
 
         #main {
             padding: 30px;
             display: flex;
+            gap: 20px;
             flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
         }
 
         .card {
-            height: 300px;
-            width: 250px;
+            position: relative;
+            width: 300px;
+            height: 350px;
             background-color: white;
-            box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: column;
-            flex-shrink: 0;
-            padding-bottom: 20px;
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.315);
             overflow: hidden;
         }
 
         .card img {
-            /* width: 100px; */
             width: 100%;
-            height: 100px;
+            height: 100%;
             object-fit: cover;
-            /* border-radius: 50%; */
-            overflow: hidden;
+            object-position: center;
         }
 
-        .card h2 {
-            font-size: 20px;
-            color: #0e2269;
-            font-weight: 600;
-        }
-
-        .card p {
-            font-size: 16px;
-            font-weight: 300;
-            color: rgb(141, 54, 33);
-            text-align: center;
-        }
-
-        .card button {
-            padding: 10px 30px;
-            border-radius: 40px;
-            border: none;
-            background-color: royalblue;
+        .bottom {
+            width: 100%;
+            height: 40%;
+            background-color: rgba(0, 0, 0, 0.274);
+            position: absolute;
+            bottom: -40%;
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+            align-items: center;
             color: white;
-            font-size: 18px;
-            font-weight: 400;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid royalblue;
-
+            transition: all ease 0.4s;
         }
 
-        .card button:hover {
-            background-color: transparent;
-            color: royalblue;
-            border: 2px solid royalblue;
-            font-weight: 500;
+        .card:hover .bottom {
+            bottom: 0;
+        }
+
+        .bottom h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .bottom i {
+            padding: 8px 10px;
+            background-color: white;
+            border-radius: 50%;
+            color: #f72828;
+            font-size: 23px;
         }
     </style>
 </head>
 
 <body>
     <div id="main">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387"
-                alt="">
-            <h2>Lisa Human</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Follow</button>
-        </div>
 
         <div class="card">
-            <img src="https://plus.unsplash.com/premium_photo-1675200124904-dfadce24119f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387"
+            <img src=https://images.unsplash.com/photo-1651199541998-0dbfc713e59d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"
                 alt="">
-            <h2>Alisa Human</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Follow</button>
+            <div class="bottom">
+                <h1>Follow</h1>
+                <i class="ri-heart-fill"></i>
+            </div>
         </div>
         <div class="card">
-            <img src="https://plus.unsplash.com/premium_photo-1664378763178-0f196c9c0395?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=386"
+            <img src=https://plus.unsplash.com/premium_photo-1664533227217-710df501572b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="">
-            <h2>Alexa Human</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Follow</button>
+            <div class="bottom">
+                <h1>Follow</h1>
+                <i class="ri-heart-fill"></i>
+            </div>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1596434300655-e48d3ff3dd5e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=486"
+            <img src=https://plus.unsplash.com/premium_photo-1732117940066-fa7555e1cabc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="">
-            <h2>Lerry Bista</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Follow</button>
+            <div class="bottom">
+                <h1>Follow</h1>
+                <i class="ri-heart-fill"></i>
+            </div>
         </div>
         <div class="card">
-            <img src="https://plus.unsplash.com/premium_photo-1732127044770-c6d5356d880f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMyfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=500"
+            <img src="https://images.unsplash.com/photo-1577834315567-e9c2c6ffeb82?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="">
-            <h2>Herry Human</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Follow</button>
+            <div class="bottom">
+                <h1>Follow</h1>
+                <i class="ri-heart-fill"></i>
+            </div>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1575818184258-1ceb64f40ff8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmwlMjBtb2RlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
+            <img src=https://images.unsplash.com/photo-1578763016548-df0acc5c497e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8"
                 alt="">
-            <h2>Model Jista</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Follow</button>
+            <div class="bottom">
+                <h1>Follow</h1>
+                <i class="ri-heart-fill"></i>
+            </div>
         </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
-                alt="">
-            <h2>Teena Human</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Follow</button>
-        </div>
+
+
     </div>
 </body>
 
