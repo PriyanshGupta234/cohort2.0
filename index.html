@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Flex and Flex Wrap | Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #121212;
+        }
+
+        #main {
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .card {
+            height: 300px;
+            width: 250px;
+            background-color: white;
+            box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            flex-shrink: 0;
+            padding-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .card img {
+            /* width: 100px; */
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            /* border-radius: 50%; */
+            overflow: hidden;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: #0e2269;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgb(141, 54, 33);
+            text-align: center;
+        }
+
+        .card button {
+            padding: 10px 30px;
+            border-radius: 40px;
+            border: none;
+            background-color: royalblue;
+            color: white;
+            font-size: 18px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid royalblue;
+
+        }
+
+        .card button:hover {
+            background-color: transparent;
+            color: royalblue;
+            border: 2px solid royalblue;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387"
+                alt="">
+            <h2>Lisa Human</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://plus.unsplash.com/premium_photo-1675200124904-dfadce24119f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387"
+                alt="">
+            <h2>Alisa Human</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Follow</button>
+        </div>
+        <div class="card">
+            <img src="https://plus.unsplash.com/premium_photo-1664378763178-0f196c9c0395?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=386"
+                alt="">
+            <h2>Alexa Human</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Follow</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1596434300655-e48d3ff3dd5e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=486"
+                alt="">
+            <h2>Lerry Bista</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Follow</button>
+        </div>
+        <div class="card">
+            <img src="https://plus.unsplash.com/premium_photo-1732127044770-c6d5356d880f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMyfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=500"
+                alt="">
+            <h2>Herry Human</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Follow</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1575818184258-1ceb64f40ff8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmwlMjBtb2RlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
+                alt="">
+            <h2>Model Jista</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Follow</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
+                alt="">
+            <h2>Teena Human</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Follow</button>
+        </div>
+    </div>
+</body>
+
+</html>
