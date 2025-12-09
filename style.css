@@ -21,6 +21,16 @@ main {
   justify-content: center;
 }
 
+h1 {
+  font-size: 80px;
+  font-family: monospace;
+  color: black;
+  font-weight: 800;
+  -webkit-text-stroke: 2px white;
+  position: relative;
+  z-index: 10;
+}
+
 button {
   background-color: crimson;
   color: white;
