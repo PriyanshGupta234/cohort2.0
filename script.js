@@ -1,11 +1,55 @@
-let box = document.querySelector("#box");
+let teams = [{
+        team: "CSK",
+        primary: "yellow",
+        secondary: "blue",
+        fullName: "Chennai Super Kings",
+        trophies: 5,
+        captain: "MSD"
+    },
+    {
+        team: "RCB",
+        primary: "red",
+        secondary: "gold"
+    },
+    {
+        team: "MI",
+        primary: "blue",
+        secondary: "gold"
+    },
+    {
+        team: "KKR",
+        primary: "purple",
+        secondary: "gold"
+    },
+    {
+        team: "SRH",
+        primary: "orange",
+        secondary: "black"
+    },
+    {
+        team: "RR",
+        primary: "pink",
+        secondary: "dark blue"
+    },
+    {
+        team: "DC",
+        primary: "blue",
+        secondary: "red"
+    },
+    {
+        team: "PBKS",
+        primary: "red",
+        secondary: "silver"
+    }
+];
+
 let btn = document.querySelector("button");
+let h1 = document.querySelector("h1");
+let main = document.querySelector("main");
 
 btn.addEventListener("click", function () {
-    let c1 = Math.floor(Math.random() * 256);
-    let c2 = Math.floor(Math.random() * 256);
-    let c3 = Math.floor(Math.random() * 256);
-
-    box.style.backgroundColor = `rgb(${c1},${c2},${c3})`;
-    // box.innerHTML = `rgb(${c1},${c2},${c3})`;
+    let winner = teams[Math.floor(Math.random() * teams.length)];
+    h1.innerHTML = winner.team;
+    h1.style.backgroundColor = winner.secondary;
+    main.style.backgroundColor = winner.primary;
 })
