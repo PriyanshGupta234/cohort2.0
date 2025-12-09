@@ -1,55 +1,23 @@
-let teams = [{
-        team: "CSK",
-        primary: "yellow",
-        secondary: "blue",
-        fullName: "Chennai Super Kings",
-        trophies: 5,
-        captain: "MSD"
-    },
-    {
-        team: "RCB",
-        primary: "red",
-        secondary: "gold"
-    },
-    {
-        team: "MI",
-        primary: "blue",
-        secondary: "gold"
-    },
-    {
-        team: "KKR",
-        primary: "purple",
-        secondary: "gold"
-    },
-    {
-        team: "SRH",
-        primary: "orange",
-        secondary: "black"
-    },
-    {
-        team: "RR",
-        primary: "pink",
-        secondary: "dark blue"
-    },
-    {
-        team: "DC",
-        primary: "blue",
-        secondary: "red"
-    },
-    {
-        team: "PBKS",
-        primary: "red",
-        secondary: "silver"
-    }
-];
-
-let btn = document.querySelector("button");
-let h1 = document.querySelector("h1");
 let main = document.querySelector("main");
+let btn = document.querySelector("button");
 
 btn.addEventListener("click", function () {
-    let winner = teams[Math.floor(Math.random() * teams.length)];
-    h1.innerHTML = winner.team;
-    h1.style.backgroundColor = winner.secondary;
-    main.style.backgroundColor = winner.primary;
+    let x = Math.random() * 100;
+    let y = Math.random() * 100;
+    let c1 = Math.floor(Math.random() * 256);
+    let c2 = Math.floor(Math.random() * 256);
+    let c3 = Math.floor(Math.random() * 256);
+    let r = Math.floor(Math.random() * 360);
+
+    let div = document.createElement("div");
+    div.style.width = "50px";
+    div.style.height = "50px";
+
+    div.style.position = "absolute";
+    div.style.left = x + '%';
+    div.style.top = y + '%';
+    div.style.rotate = r + 'deg';
+    div.style.backgroundColor = `rgb(${c1}, ${c2}, ${c3})`;
+
+    main.appendChild(div);
 })
