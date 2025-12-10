@@ -1,17 +1,19 @@
-let main = document.querySelector("main");
-let btn = document.querySelector("button");
+let img = document.querySelector("img");
+let love = document.querySelector("#love");
 
-main.addEventListener("mousemove", function () {
-    let x = Math.random() * 100;
-    let y = Math.random() * 100;
-    let div = document.createElement("div");
-    div.style.width = "10px";
-    div.style.height = "10px";
-    div.style.border = "2px solid green";
-    div.style.borderRadius = "50%";
+img.addEventListener("dblclick", function () {
+    love.style.opacity = 1;
+    love.style.transform = "translate(-50%, -50%) scale(1) rotate(0deg)";
 
-    div.style.position = "absolute";
-    div.style.left = x + "%";
-    div.style.top = y + "%";
-    main.appendChild(div);
+    setTimeout(function () {
+        love.style.transform = "translate(-50%, -300%) scale(1) rotate(-60deg)";
+    }, 800)
+
+    setTimeout(function () {
+        love.style.opacity = 0;
+    }, 1000)
+
+    setTimeout(function () {
+        love.style.transform = "translate(-50%, -50%) scale(0) rotate(-90deg)"
+    }, 1200)
 })
