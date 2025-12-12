@@ -1,7 +1,10 @@
-var main = document.querySelector("main");
-var cursor = document.querySelector("#cursor");
-
-main.addEventListener('mousemove', function (dets) {
-    cursor.style.left = dets.x + "px";
-    cursor.style.top = dets.y + "px";
-})
+  var allBtn = document.querySelectorAll("button");
+  allBtn.forEach(function (elem) {
+      elem.addEventListener("click", function () {
+          if (elem.innerHTML == "Add Friend") {
+              elem.innerHTML = "Remove Friend";
+          } else {
+              elem.innerHTML = "Add Friend";
+          }
+      })
+  })
