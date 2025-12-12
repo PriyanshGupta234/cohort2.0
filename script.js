@@ -1,19 +1,7 @@
-let img = document.querySelector("img");
-let love = document.querySelector("#love");
+var main = document.querySelector("main");
+var cursor = document.querySelector("#cursor");
 
-img.addEventListener("dblclick", function () {
-    love.style.opacity = 1;
-    love.style.transform = "translate(-50%, -50%) scale(1) rotate(0deg)";
-
-    setTimeout(function () {
-        love.style.transform = "translate(-50%, -300%) scale(1) rotate(-60deg)";
-    }, 800)
-
-    setTimeout(function () {
-        love.style.opacity = 0;
-    }, 1000)
-
-    setTimeout(function () {
-        love.style.transform = "translate(-50%, -50%) scale(0) rotate(-90deg)"
-    }, 1200)
+main.addEventListener('mousemove', function (dets) {
+    cursor.style.left = dets.x + "px";
+    cursor.style.top = dets.y + "px";
 })
